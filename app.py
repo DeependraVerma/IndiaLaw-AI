@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 from dotenv import load_dotenv
 from fetch_case_content import fetch_case_content
-from your_embeddings_module import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain_google_genai import GoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 import os
 import re
