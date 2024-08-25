@@ -1,0 +1,9 @@
+python-dotenv
+langchain-google-genai
+langchain_core
+FAISS-CPU
+streamlit
+langchain-text-splitters
+beautifulsoup4
+langchain_community
+google-generativeai
