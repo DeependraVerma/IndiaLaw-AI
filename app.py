@@ -42,7 +42,7 @@ if user_api_key:
     vector_store = FAISS.load_local("vector_store/faiis_cpu", embedding_model, allow_dangerous_deserialization=True)
 
     # Load the CSV file containing case data
-    df = pd.read_csv("./top_judgments.csv")
+    df = pd.read_csv("https://github.com/DeependraVerma/IndiaLaw-AI/raw/main/top_judgments.csv")
 
     # User query input
     query = st.text_input("Ask a legal case question:")
