@@ -11,10 +11,11 @@ import re
 
 # Load environment variables
 load_dotenv()
-api_key = genai.configure(api_key=os.getenv("GOOGLE_GENAI_API_KEY"))
-api_key_embed = os.getenv("GOOGLE_GENAI_API_KEY")
+
+user_api_key = st.sidebar.text_input("API Key", type="password")
+api_key = genai.configure(api_key=user_api_key)
 generation_config = {
-  "temperature": 1,
+  "temperature": 0.2,
   "top_p": 0.95,
   "top_k": 64,
   "max_output_tokens": 8192,
@@ -33,7 +34,7 @@ chat_session = model.start_chat(
 )
 
 
-embedding_model = GoogleGenerativeAIEmbeddings(model_name="models/embedding-001", google_api_key=api_key_embed)
+embedding_model = GoogleGenerativeAIEmbeddings(model_name="models/embedding-001", google_api_key=user_api_key)
 
 # Load the saved FAISS index
 vector_store = FAISS.load_local("vector_store/faiis_cpu", embedding_model, allow_dangerous_deserialization=True)
