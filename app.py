@@ -33,7 +33,7 @@ chat_session = model.start_chat(
 )
 
 
-embedding_model = GoogleGenerativeAIEmbeddings(model_name="models/embedding-001", google_api_key=user_api_key)
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=user_api_key)
 
 # Load the saved FAISS index
 vector_store = FAISS.load_local("vector_store/faiis_cpu", embedding_model, allow_dangerous_deserialization=True)
